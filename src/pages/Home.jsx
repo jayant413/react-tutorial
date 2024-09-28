@@ -19,6 +19,10 @@ const Home = ({ title }) => {
 
   useEffect(() => {
     console.log(count);
+
+    return () => {
+      // Runs when the component unmounts
+    };
   }, [count]); // component did update also called when mount
 
   const handleIncrement = () => {

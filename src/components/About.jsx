@@ -1,7 +1,9 @@
 import React from "react";
 import SearchBox from "./ui/SearchBox";
+import { useNavigate } from "react-router-dom";
 
 const About = () => {
+  const navigate = useNavigate();
   const names = ["Bob", "Charlie", "Sudarshan", "Om"];
 
   const personData = [
@@ -13,7 +15,7 @@ const About = () => {
   ];
 
   return (
-    <div>
+    <React.Fragment>
       {names.map((name, index) => {
         return (
           <div key={index}>
@@ -36,12 +38,14 @@ const About = () => {
         })}
       </div>
 
+      <button onClick={() => navigate("/")}>Navigate to App page</button>
+
       {/* <ul>
         {names.map((name, index) => {
           return <li key={index}>{name}</li>;
         })}
       </ul> */}
-    </div>
+    </React.Fragment>
   );
 };
 
